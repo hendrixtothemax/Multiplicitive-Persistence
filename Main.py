@@ -1,16 +1,20 @@
 #imports
 from random import randrange
+import time
 
 #Main Class
 class Main:
     def __init__(self):
-        print('Multiplicitive Persistence Problem -- V0.1 -- Alexander Hendrix -- 2020')
+        print('Multiplicitive Persistence Problem -- V0.2 -- Alexander Hendrix -- 2020')
 
-def per(n,t):
-    times = t
+def per(n,t,initnumb):
 
     if len(str(n))==1:
-        print("Number Of Times: " + str(times))
+        if t > 10:
+            print("INIT NUMBER:")
+            print(initnumb)
+            print("")
+            print("Number Of Times: " + str(t))
         return "DONE"
     else:
         digits = [int(i) for i in str(n)]
@@ -19,12 +23,11 @@ def per(n,t):
         for j in digits:
             result *= j
 
-        times += 1
-        print(result)
-        per(result,times)
+        t += 1
+        per(result,t,initnumb)
 
 def Process():
-    desLength = randrange(5,30,1)
+    desLength = randrange(5,16,1)
     smrtNumbs = [2,4,6,7,8,9]
     length=len(smrtNumbs)
     FinalNumb=""
@@ -34,12 +37,9 @@ def Process():
         FinalNumb = FinalNumb + str(smrtNumbs[randrange(length)])
         i += 1
 
-    print("INIT NUMBER:")
-    print(FinalNumb)
-    print("")
-    per(int(FinalNumb),0)
+    result = per(int(FinalNumb),0,FinalNumb)
 
 
 Main()
-#per(277777788888899,0)
-Process()
+while True:
+    Process()
