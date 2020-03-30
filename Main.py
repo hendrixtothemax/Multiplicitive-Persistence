@@ -1,3 +1,4 @@
+#Main Class
 class Main:
     def __init__(self):
         print('Multiplicitive Persistence Problem -- V0.1 -- Alexander Hendrix -- 2020')
