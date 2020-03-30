@@ -1,3 +1,6 @@
+#imports
+from random import randrange
+
 #Main Class
 class Main:
     def __init__(self):
@@ -20,5 +23,23 @@ def per(n,t):
         print(result)
         per(result,times)
 
+def Process():
+    desLength = randrange(5,30,1)
+    smrtNumbs = [2,4,6,7,8,9]
+    length=len(smrtNumbs)
+    FinalNumb=""
+    i=0
+
+    while i < desLength:
+        FinalNumb = FinalNumb + str(smrtNumbs[randrange(length)])
+        i += 1
+
+    print("INIT NUMBER:")
+    print(FinalNumb)
+    print("")
+    per(int(FinalNumb),0)
+
+
 Main()
-per(277777788888899,0)
+#per(277777788888899,0)
+Process()
